@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/topgross.css')}}">
+ </head>
+ 
+ <body>
+     
+     <nav class="navbar">
+         <div class="navdiv">
+             <div class="logo"><a href="/">MovieVerse</a> </div>
+             <ul>
+                 
+                 <li><a href="/recommend">Search</a></li>
+                 
+             </ul>
+         </div>
+     </nav>
+ 
+     <h1 style="text-align: center; font-size: 50px; margin-top: 30px; text-shadow: 2px 2px grey; background-color: antiquewhite;">Highest-Grossing Films</h1>
+ 
+     <div class="grid-container">
+         {% for i in range(title|length) %}
+         <div class="grid-item">
+             <h4>{{ rank[i] }}</h4>
+             <a href={{ url_for("recommend", title = title[i], release_year = release_year[i]) }} target="_main">
+                 <img src="{{ poster[i] }}" alt="background.jpg">
+             </a>
+             <h3>{{ title[i] }}</h3>
+             <h4>Release Year - {{ release_year[i] }}</h4>
+             <h4>World Wide Gross - {{ ww_gross[i] }}</h4>
+         </div>
+         {% endfor %}
+     </div>
+ </body>
+ </html>
+ 

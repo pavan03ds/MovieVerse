@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/recommend.css')}}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/">MovieVerse</a>
+        </div>
+    </nav>
+
+    <div class="searched-movie-container">
+        <div class="container">
+            <img src="{{ searched_movie.poster }}" alt="poster"onerror="this.src='{{ url_for('static', filename='images/default_poster4.png') }}';" style="height: 400px;"><br>
+            <h3 style="color: black;">{{ searched_movie.title }}</h3><br>
+            <p>Release: <b>{{ searched_movie.release_year }}</b></p>
+            <p>Cast: <b>{{ searched_movie.cast_display }}</b></p>
+            <p>Director: <b>{{ searched_movie.director_display }}</b></p>
+            <p>Genres: <b>{{ searched_movie.genres_display }}</b></p>
+            <p>Production Companies: <b>{{ searched_movie.production_companies_display }}</b></p>
+        </div>
+    </div>
+
+    <div class="recommendations">
+        Recommendations for the movie "{{ searched_movie.title }}"
+    </div>
+
+    <div class="grid-container">
+        {% for movie in data %}
+        <div class="grid-item">
+            <a href="{{ url_for('recommend', title=movie.title, release_year=movie.release_year) }}" target="_main">
+                <img src="{{ movie.poster }}" alt="poster"onerror="this.src='{{ url_for('static', filename='images/default_poster4.png') }}';" style="height: 300px;">
+            </a>
+            <h3>{{ movie.title }}</h3>
+            <h5>Release Year - {{ movie.release_year }}</h5>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

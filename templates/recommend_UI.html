@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/search.css')}}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="/">MovieVerse</a> </div>
+        </div>
+    </nav>
+
+    <h1>Explore the Cinematic Universe</h1>
+
+    <div class="search-container">
+        <form action="/popular_matches" method="post">
+            <div class="search-box">
+                <input type="text" name="search-input" class="search-input" placeholder="Search...">
+                <button type="submit" class="search-button">Search</button>
+            </div>
+        </form>
+    </div><br>
+
+    <p style="text-align: center; color:blue; font-size: 21px; text-shadow: 2px 2px whitesmoke;">Search for the movies between 1991 to 2022</p>
+    <p style="text-align: center; color: rgb(106, 3, 3); text-decoration: underline; font-size: 21px; text-shadow: 2px 2px whitesmoke;"> ( White spaces and letter case (capitalization) will be handled. Just try to enter the correct spelling.)</p>
+
+</body>
+</html>
+

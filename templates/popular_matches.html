@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/popular_matches.css')}}">
+</head>
+<body >
+
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="/">MovieVerse</a> </div>
+            <ul>
+                <li><a href="/recommend">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+           
+    {% if response == 404 %}
+        <p style="text-align: center; font-size: 30px; color: red; font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-shadow:2px 2px black;">{{ statement }}</p>
+    {% else %}
+        <h1>Popular Matches</h1>
+        <div class="grid-container">
+            {% for movie in popular_matches %}
+                <div class="grid-item">
+                    <a href={{ url_for("recommend", title = movie.title, release_year = movie.release_year) }} target="_main">
+
+                        <img src="{{ movie.poster }}" alt="poster"onerror="this.src='{{ url_for('static', filename='images/default_poster4.png') }}';">
+
+                    </a>
+                    <h3>{{ movie.title }}</h3>
+                    <h4>Release Year - {{ movie.release_year }}</h4>
+                </div>
+            {% endfor %}
+        </div> 
+    {% endif %}
+
+</body>
+</html>
