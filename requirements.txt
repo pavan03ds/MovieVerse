@@ -1,4 +1,4 @@
 flask
 scikit-learn
-pandas
+pandas==2.0.3
 gunicorn==19.7.1
