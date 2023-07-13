@@ -5,9 +5,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 
 
-top_gross = pickle.load(open('top_gross.pkl','rb'))
-movies = pickle.load(open('movies.pkl','rb'))
+#top_gross = pickle.load(open('top_gross.pkl','rb'))
+#movies = pickle.load(open('movies.pkl','rb'))
 #similarity_array = pickle.load(open('similarity_array.pkl','rb'))
+top_gross = pd.read_pickle('top_gross.pkl')
+movies = pd.read_pickle('movies.pkl')
 
 tfidf_doc = TfidfVectorizer()
 tfidf_doc_matrix = tfidf_doc.fit_transform(movies['document'])  
