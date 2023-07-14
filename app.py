@@ -5,17 +5,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-def remove_special_characters(string):
-    # Define the set of special characters to remove
-    special_characters = " !@#$%^&*()_+=-{}[]|\:;\"'<>?,./"
 
-    # Iterate over each character in the string and filter out the special characters
-    cleaned_string = ''.join(char for char in string if char not in special_characters)
-
-    return cleaned_string.lower()
-
-
-
+#top_gross = pickle.load(open('top_gross.pkl','rb'))
+#movies = pickle.load(open('movies.pkl','rb'))
 #similarity_array = pickle.load(open('similarity_array.pkl','rb'))
 top_gross = pd.read_csv('top_gross.csv')
 movies = pd.read_csv('movies.csv')
@@ -43,9 +35,8 @@ def popular_matches():
 
     title = request.form.get("search-input")
 
-    # clean = lambda s : s.translate({ord(i): '' for i in " :-,"}) 
-    title_cleaned = remove_special_characters(title)  #removing special characters and changing into lower case
-
+    clean = lambda s : s.translate({ord(i): '' for i in " :-,"}) 
+    title_cleaned = clean(title.lower())  #removing special characters and changing into lower case
 
     if len(title_cleaned) == 0:
         statement_null = "Please... Enter a movie titile..."
