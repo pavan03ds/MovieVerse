@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css')}}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="/">MovieVerse</a> </div>
+            
+        </div>
+    </nav>
+
+    <h1>Login Here</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul style="text-align: center; color: red;">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/login">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br>
+        
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

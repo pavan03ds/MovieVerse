@@ -1,0 +1,176 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+
+
+* {
+    text-decoration: none;
+}
+
+.navbar {
+    background: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    padding: 15px;
+}
+
+.logo a {
+    font-size: 35px;
+    font-weight: 600;
+    color : white;
+    text-shadow: 2px 2px gold;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+li a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: darkorange;
+    
+}
+
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: black;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content:left;
+}
+
+input[type="checkbox"] {
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+#english_checkbox {
+    margin-right: 20px;
+}
+
+#telugu_checkbox {
+    margin-right: 20px;
+}
+
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #444;
+}
+
+
+/* CSS code for the layout */
+/* body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  .navdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  input[type="text"],
+  input[type="checkbox"] {
+    margin-bottom: 10px;
+  } */
+  
+  /* Additional styles specific to your dashboard */
+  /* Add your own styles for dashboard elements here */
+    

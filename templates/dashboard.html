@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title>Dashboard</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='styles/dashboard.css')}}">
+ </head>
+ <body>
+     <nav class="navbar">
+         <div class="navdiv">
+             <div class="logo"><a href="/">MovieVerse</a></div>
+             <ul>
+                 <li><a href="/logout">Logout</a></li>
+             </ul>            
+         </div>
+     </nav>
+ 
+     <h1>Welcome, {{ username }}!</h1>
+     <p>This is your dashboard. You are logged in.</p>
+     {% with messages = get_flashed_messages() %}
+     {% if messages %}
+         <ul style="text-align: center; color: red;">
+             {% for message in messages %}
+                 <li>{{ message }}</li>
+             {% endfor %}
+         </ul>
+     {% endif %}
+ {% endwith %}
+ 
+     <h1 style="text-align: center;">Please type your interests, one by one, separated by commas "," in each section.</h1>
+     <h1 style="text-align: center;">Please try to enter exact spelling</h1>
+    
+     <form method="POST" action="/UserProfieRecommendation">
+         <label for="cast">Favorite Cast:</label>
+         <input type="text" name="cast" value="{{cast if cast}}">
+ 
+         <label for="director">Favorite Director:</label>
+         <input type="text" name="director" value="{{director if director}}">
+ 
+         <label for="genres">Favorite Genres:</label>
+         <input type="text" name="genres" value="{{genres if genres}}">
+
+         <!-- <div class="checkbox-container">
+            <label for="english_checkbox">English</label>
+            <input type="checkbox" id="english_checkbox" name="languages" class="languages" value="English">
+        
+            <label for="telugu_checkbox">Telugu</label>
+            <input type="checkbox" id="telugu_checkbox" name="languages" class="languages" value="Telugu">
+        
+            <label for="hindi_checkbox">Hindi</label>
+            <input type="checkbox" id="hindi_checkbox" name="languages" class="languages" value="Hindi">
+        </div> -->
+        
+ 
+         <input type="submit" value="Submit">
+     </form>
+ </body>
+ </html>
+ 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/profile_recommendation.css')}}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="/">MovieVerse</a> </div>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+            </ul> 
+        </div>
+    </nav>
+
+    <div class="text">
+    <p>Your Input Cast : <big>{{favourite_cast}}</big></p>
+    <p>Your Input Directors: <big>{{favourite_director}}</big></p>
+    <p>Your Input Genres: <big>{{favourite_genres}}</big></p>
+    <!-- <p>Your Input Language: <big>{{language}}</big></p> -->
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+     {% if messages %}
+         <ul style="text-align: center; color: red; text-decoration: underline;">
+             {% for message in messages %}
+                 <li>{{ message }}</li>
+             {% endfor %}
+         </ul>
+     {% endif %}
+     {% endwith %}
+
+    <div class="grid-container">
+        {% for movie in data %}
+        <div class="grid-item">
+            <a href="{{ url_for('recommend', title=movie.title, release_year=movie.release_year) }}" target="_main">
+                <img src="{{ movie.poster }}" alt="poster"onerror="this.src='{{ url_for('static', filename='images/default_poster4.png') }}';" style="height: 300px;">
+            </a>
+            <h3>{{ movie.title }}</h3>
+            <h5>Release Year - {{ movie.release_year }}</h5>
+            <h5>Language: {{ movie.language }}</h5>
+        </div>
+        {% endfor %}
+    </div>
+</body>

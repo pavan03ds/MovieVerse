@@ -22,6 +22,7 @@
             <p>Cast: <b>{{ searched_movie.cast_display }}</b></p>
             <p>Director: <b>{{ searched_movie.director_display }}</b></p>
             <p>Genres: <b>{{ searched_movie.genres_display }}</b></p>
+            <p>Language: <b>{{ searched_movie.language }}</b></p>
             <p>Production Companies: <b>{{ searched_movie.production_companies_display }}</b></p>
         </div>
     </div>
@@ -38,6 +39,7 @@
             </a>
             <h3>{{ movie.title }}</h3>
             <h5>Release Year - {{ movie.release_year }}</h5>
+            <h5>Language: {{ movie.language }}</h5>
         </div>
         {% endfor %}
     </div>
