@@ -1,0 +1,3 @@
+[submodule "MovieVerse"]
+    path = MovieVerse
+    url = https://github.com/pavan03ds/MovieVerse.git
